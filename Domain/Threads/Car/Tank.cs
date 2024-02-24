@@ -35,6 +35,16 @@ namespace Car
 			else fuelLevel = Volume;
 		}
 
+		public void Spend(double value)
+		{
+			if (value <= 0) return;
+			if (fuelLevel - value >= 0)
+			{
+				fuelLevel -= value;
+			}
+			else fuelLevel = 0;
+		}
+
 		public void Info()
 		{
 			Console.WriteLine($"Tank volume = {Volume}\nFuel level = {FuelLevel}");
